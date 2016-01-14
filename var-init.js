@@ -1,9 +1,11 @@
 var baz;
+// 测试重命名，baz 用 var 声明的，可以再次声明
 var {bar:baz} = {
   bar: 1
 };
-console.log(baz);
+console.log('baz:', baz);
 
+// 测试模式匹配
 var node = {
   loc: {
     start: {
@@ -13,8 +15,9 @@ var node = {
   }
 };
 
+// loc 仅是模式，其不被赋值，start 被匹配
 var {loc: {start}} = node;
-console.log(start);
+console.log('start', start);
 
 
 var obj = {
@@ -26,10 +29,13 @@ var obj = {
   ]
 };
 var {p: [x, {y:z}]} = obj;
-// var {p} = obj;
-console.log(z);
-// console.log(p);
+console.log('p:', p);
+console.log('z:', z);
+
+
+var {p} = obj;
+console.log('p:', p);
 
 
 let {toString: s} = 123;
-console.log(s);
+console.log(s.call(456));

@@ -10,6 +10,8 @@ function f1() {
   }
   console.log(c);
 }
+// 测试块作用域
+f1();
 
 if (true) {
 	console.log('d', d);
@@ -17,6 +19,6 @@ if (true) {
 }
 
 if (true) {
-	console.log('e', e);
+	console.log('e', e); // 此处应抛错
 	let e = 4;
 }

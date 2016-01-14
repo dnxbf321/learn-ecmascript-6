@@ -7,7 +7,12 @@ class A {
   sayIt() {
     console.log(this.a);
   }
+  static sayHi() {
+    console.log('hi');
+  }
 }
+
+A.sayHi();
 
 class B extends A {
   constructor() {
@@ -18,5 +23,9 @@ class B extends A {
     super.sayIt();
   }
 }
+
+console.log('\nclass B');
+B.sayHi();
 var b = new B();
 b.sayIt();
+B.sayHi();
